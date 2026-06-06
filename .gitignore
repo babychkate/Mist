@@ -1,0 +1,35 @@
+# ===== FRONTEND =====
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# ===== BACKEND =====
+bin/
+obj/
+.vs/
+TestResults/
+__pycache__/
+*.pyc
+[Tt]est[Rr]esult*/
+
+# ===== ENV / SECRETS =====
+.env
+.env.local
+appsettings.json
+appsettings.Development.json
+
+# ===== OS =====
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
