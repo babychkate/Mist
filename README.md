@@ -5,11 +5,11 @@ It takes a YouTube video as input and produces a ready-to-publish content packag
 
 Creating a video is only half the work. Writing captions for Instagram, LinkedIn, TikTok, picking hashtags, finding a photo - manually, after every upload. Existing tools like Repurpose.io, Lately.ai, Castmagic and Quso.ai are paid, English-only, and built for teams. Mist fills that gap: free, Ukrainian-language, built for solo content makers.
 
-![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat&logo=dotnet&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![MS SQL](https://img.shields.io/badge/MS_SQL_Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)
-![Python](https://img.shields.io/badge/Python_FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat&logo=google&logoColor=white)
+[![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![MS SQL](https://img.shields.io/badge/MS_SQL_Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)](https://learn.microsoft.com/en-us/sql/sql-server/)
+[![Python](https://img.shields.io/badge/Python_FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat&logo=google&logoColor=white)](https://ai.google.dev/gemini-api/docs)
 ![Tests](https://img.shields.io/badge/tests-44_passing-brightgreen?style=flat)
 
 ---
@@ -230,4 +230,4 @@ Fill in `appsettings.json` in the `Mist` project:
 
 ---
 
-👩🏻‍💻 Creator: **Kateryna Babych** — [LinkedIn](https://www.linkedin.com/in/babych-kate) | [Email](mailto:babychkatia14@gmail.com) | Lviv Polytechnic National University, 2026
+Creator: **Kateryna Babych** — [LinkedIn](https://www.linkedin.com/in/babych-kate) | [Email](mailto:babychkatia14@gmail.com) | Lviv Polytechnic National University, 2026
