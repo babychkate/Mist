@@ -13,7 +13,6 @@ public class MistDetailService(AppDbContext context) : IMistDetailService
     {
         var generation = await _context.Generations
             .Where(g => g.GenerationId == generationId && g.GenerationUserId == userId)
-            .AsSplitQuery()
             .Include(g => g.GenerationVideo)
             .Include(g => g.GenerationPlatforms)
                 .ThenInclude(gp => gp.GenerationPlatformPlatform)
@@ -46,7 +45,6 @@ public class MistDetailService(AppDbContext context) : IMistDetailService
                 ? $"https://img.youtube.com/vi/{generation.GenerationVideo.VideoYoutubeId}/hqdefault.jpg"
                 : null,
             CreatedAt = generation.GenerationCreatedAt?.ToString("d MMMM yyyy", culture) ?? "",
-
             Platforms = generation.GenerationPlatforms.Select(gp => new MistDetailPlatformDto
             {
                 GenerationPlatformId = gp.GenerationPlatformId,
@@ -56,7 +54,6 @@ public class MistDetailService(AppDbContext context) : IMistDetailService
                 GeneratedHashtags = gp.GenerationPlatformGeneratedHashtags,
                 CustomPrompt = gp.GenerationPlatformCustomPrompt,
                 ToneName = gp.GenerationPlatformTone?.GenerationPlatformToneTone?.ToneName,
-
                 Track = gp.GenerationPlatformMusicTrack?.GenerationPlatformMusicTrackMusic == null ? null
                     : new MistDetailTrackDto
                     {
@@ -67,7 +64,6 @@ public class MistDetailService(AppDbContext context) : IMistDetailService
                         PreviewUrl = gp.GenerationPlatformMusicTrack.GenerationPlatformMusicTrackMusic.MusicPreviewUrl,
                         AuthorName = gp.GenerationPlatformMusicTrack.GenerationPlatformMusicTrackMusic.MusicAuthor?.MusicAuthorName,
                     },
-
                 Photos = gp.GenerationPlatformPhotos.Select(pp => new MistDetailPhotoDto
                 {
                     Url = pp.GenerationPlatformPhotoPhoto?.PhotoUrl ?? "",
