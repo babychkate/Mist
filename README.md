@@ -16,12 +16,12 @@ Creating a video is only half the work. Writing captions for Instagram, LinkedIn
 
 ## 🎥 Demo
 
-> Demo video coming soon.
+> 🚧 Live deployment coming soon.
 
-📌 *Note:* The project requires local database setup and API keys configuration.
+📌 *Note:* The project requires local database setup and API keys configuration.  
 For a full walkthrough of all features, a demo presentation video is provided.
 
-👉 [Watch demo video](#) *(link coming soon)*
+👉 [▶ Watch demo video (13 min)](https://drive.google.com/file/d/1aJ2P0fl8FS97IbPePOprd1bxtAPgfUHo/view?usp=drive_link)
 
 ---
 
@@ -77,35 +77,8 @@ For a full walkthrough of all features, a demo presentation video is provided.
 ## 🏗️ Architecture
 
 The project follows a service-oriented architecture with a dedicated Python microservice for subtitle extraction.
+<img width="1565" height="791" alt="image" src="https://github.com/user-attachments/assets/5c650d22-0335-4fe6-a577-6949803b51d8" />
 
-```mermaid
-graph TD
-    Client["React SPA\nZustand + TanStack Query"]
-    Controllers[".NET 8 Controllers"]
-    Services["Service Layer"]
-    DTOs["DTOs"]
-    Middleware["Middleware\nError handling, Auth"]
-    DB[("MS SQL Server\nEF Core")]
-    FastAPI["FastAPI\nSubtitle Microservice\nport 8001"]
-    Gemini["Gemini 2.5 Flash"]
-    Cloudinary["Cloudinary"]
-    YouTube["YouTube Data API"]
-    Jamendo["Jamendo API"]
-    HuggingFace["Hugging Face"]
-
-    Client -->|"Axios + JWT Bearer"| Middleware
-    Middleware --> Controllers
-    Controllers <-->|"request / response"| DTOs
-    Controllers --> Services
-    Services -->|"EF Core"| DB
-    Services -->|"HTTP"| FastAPI
-    FastAPI --> YouTube
-    Services --> Gemini
-    Services --> Cloudinary
-    Services --> YouTube
-    Services --> Jamendo
-    Services --> HuggingFace
-```
 
 ---
 
@@ -132,8 +105,8 @@ Each test uses an isolated InMemory database with a unique `Guid` name.
 | Service | Tests | Coverage |
 |---|---|---|
 | `VideoService` | 17 | `ExtractYoutubeId` via `[Theory]` + `[InlineData]` across all YouTube URL formats; `ParseDuration` via reflection |
-| `ProfileService` | 11 | Get profile, update (duplicate email, own email), change password, soft delete |
-| `AuthService` | 8 | Register (duplicate, weak password, success), login (not found, deleted account, wrong password, success), `GetMeAsync` |
+| `ProfileService` | 10 | Get profile, update (duplicate email, own email), change password, soft delete |
+| `AuthService` | 9 | Register (duplicate, weak password, success), login (not found, deleted account, wrong password, success), `GetMeAsync` |
 | `GenerationPlatformService` | 8 | Exception paths (platform/video not found), platform-specific fallback text tested via reflection |
 
 ---
